@@ -1,10 +1,10 @@
 'use strict';
 
 
-function Krik() {
+function Scrapper() {
 }
 
-Krik.prototype.singleParser = function(source, css_selector, is_clean) {
+Scrapper.prototype.singleParser = function(source, css_selector, is_clean) {
 	var jsdom = require('jsdom');
 	var Promise = require('promise');
 	var extracted;
@@ -34,7 +34,7 @@ Krik.prototype.singleParser = function(source, css_selector, is_clean) {
 	});
 };
 
-Krik.prototype.parse = function(source, css_selector_object, is_clean) {
+Scrapper.prototype.parse = function(source, css_selector_object, is_clean) {
 	if(typeof source == "string") {
 
 		if (typeof css_selector_object == "object") {
@@ -47,7 +47,7 @@ Krik.prototype.parse = function(source, css_selector_object, is_clean) {
 						var response = {};
 						Object.keys(css_selector_object).forEach(function(key) {
 							var selector = css_selector_object[key];
-							Krik.prototype.singleParser(source, selector, is_clean).then(function (res) {
+							Scrapper.prototype.singleParser(source, selector, is_clean).then(function (res) {
 								response[key] = res;
 							});
 
@@ -77,4 +77,4 @@ Krik.prototype.parse = function(source, css_selector_object, is_clean) {
 	
 };
 
-module.exports = Krik;
+module.exports = Scrapper;

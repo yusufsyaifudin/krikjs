@@ -1,7 +1,8 @@
 'use strict';
 
-var Permintaan = require('./Permintaan.js');
-var Krik = require('./Krik.js');
+var Krik = require('./index.js');
+var Permintaan = new Krik.Permintaan();
+var Scrapper = new Krik.Scrapper();
 
 var request_option = {url: "https://docs.angularjs.org/tutorial/step_01"};
 
@@ -21,7 +22,7 @@ var css_selector = {
 
 // Get link from Kompas Index
 request_option = {url: "http://indeks.kompas.com/indeks/index/news"};
-new Permintaan().getSource(request_option, true).then(function (source) {
+Permintaan.getSource(request_option, true).then(function (source) {
 
 	var jsdom = require('jsdom');
 	jsdom.env({
@@ -44,7 +45,7 @@ new Permintaan().getSource(request_option, true).then(function (source) {
 function grabNews(links) {
 	for(let i=0; i<links.length; i++) {
 		// foreach links, open it!
-		new Permintaan().getSource(links[i], true).then(function (content) {
+		Permintaan.getSource(links[i], true).then(function (content) {
 			// then parse it!
 			css_selector = 
 			{
@@ -54,7 +55,7 @@ function grabNews(links) {
 				date: '#leftside > div.kcm-read > div.kcm-read-top.clearfix > div > div.kcm-date.msmall.grey'
 			};
 
-			new Krik().parse(content, css_selector, true).then(function (parsed) {
+			Scrapper.parse(content, css_selector, true).then(function (parsed) {
 				console.log(parsed);
 			});
 
