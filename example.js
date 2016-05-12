@@ -11,13 +11,13 @@ var css_selector = {
 	tutorial: '#wrapper > section > div > div.grid-right > div.ng-scope'
 };
 
-// new Permintaan().getSource(request_option, false).then(function (content) {
-// 	// console.log(content);
-// 	new Krik().parse(content, css_selector, true).then(function (parsed) {
-// 		console.log(parsed);
-// 	});
+Permintaan.getSource(request_option, false).then(function (content) {
+	// console.log(content);
+	Scrapper.parse(content, css_selector, true).then(function (parsed) {
+		console.log(parsed);
+	});
 
-// });
+});
 
 
 // Get link from Kompas Index
