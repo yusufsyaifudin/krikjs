@@ -1,6 +1,6 @@
 {
   "name": "krikjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Krik (read it as Kerik or Pengerik in english: Scrapper) is a scrapper tools to parse web based on CSS path using jQuery ",
   "main": "index.js",
   "scripts": {
