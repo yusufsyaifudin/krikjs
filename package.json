@@ -1,0 +1,31 @@
+{
+  "name": "krikjs",
+  "version": "1.0.0",
+  "description": "Krik (read it as `Kerik` or `Pengerik` in english: Scrapper) is a scrapper tools to parse web based on CSS path using jQuery ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "keywords": [
+    "scrapper",
+    "parser",
+    "web",
+    "parser",
+    "scrappy"
+  ],
+  "author": "Yusuf Syaifudin",
+  "license": "MIT",
+  "dependencies": {
+    "deasync": "^0.1.4",
+    "jquery": "^2.2.2",
+    "jsdom": "^8.1.0",
+    "phridge": "^2.0.0",
+    "promise": "^7.1.1",
+    "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "mocha": "^2.4.5"
+  }
+}
